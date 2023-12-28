@@ -20,7 +20,7 @@ const config = {
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
-    organizationName: 'WSS-Studio', // Usually your GitHub org/user name.
+    organizationName: 'TryHackMyOffsecBox', // Usually your GitHub org/user name.
     projectName: 'TryHackMe-CN', // Usually your repo name.
 
     onBrokenLinks: 'throw',
@@ -98,7 +98,7 @@ const config = {
                 copyright: `Copyright © ${new Date().getFullYear()} Tryhackme CN Mirror Built with Docusaurus.`,
             },
             prism: {
-                additionalLanguages: ['powershell', 'php', 'ini', 'json'],
+                additionalLanguages: ['powershell', 'php', 'ini', 'json', "aspnet"],
                 theme: prismThemes.github,
                 darkTheme: prismThemes.dracula,
             },

@@ -1,41 +1,9 @@
-# Website
+# Tryhackme CN Mirror
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+这个站点为 Tryhackme 的中文镜像站，只搬运并翻译了教程内容，并记录了部分问题的解题过程和答案，并未将靶场等资源进行搬运
 
-### Installation
+## 希望对这个项目做出贡献
 
-```
-$ yarn
-```
+欢迎加入 QQ 群：[TryHackMyOffsecBox 交流群](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=4v3z_MWHPX0iTj6xfPor8Z76gwM5ngkJ&authKey=0DjB6HqZD7lmV5Ej8oezeVauzHLlDrFo%2BqMwAP2jDgQ0gXx7PlqUlxqazfDprqB9&noverify=0&group_code=751273347)
 
-### Local Development
-
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+亦或者可以直接在 Github 上对这个项目直接进行贡献

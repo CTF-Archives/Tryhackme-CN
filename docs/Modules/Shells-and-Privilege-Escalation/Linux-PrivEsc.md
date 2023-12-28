@@ -844,4 +844,4 @@ exit
 
 ## 特权升级脚本
 
-TODO 尚未完成
+在 Linux 上编写了几个工具，可以帮助发现潜在的权限提升漏洞。其中三个工具已经包含在 Debian 虚拟机的以下目录中：`/home/user/tools/privesc-scripts`

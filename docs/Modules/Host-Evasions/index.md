@@ -26,7 +26,7 @@ sidebar_position: 13
 >
 > Learn how to interact with the win32 API and understand its wide range of use cases
 
-## [Abusing Windows Internals] - 滥用 Windows 内部机制
+## [Abusing Windows Internals](./Abusing-Windows-Internals) - 滥用 Windows 内部机制
 
 > 利用 Windows 内部组件来规避常见的检测解决方案，采用现代的与工具无关的方法。
 >

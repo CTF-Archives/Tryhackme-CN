@@ -227,8 +227,7 @@ Ex
 
 可以在以下文档中找到说明
 
-[VirtualAlloc function (memoryapi.h) - Microsoft Learn]([https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc]
-)
+[VirtualAlloc function (memoryapi.h) - Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc)
 
 </details>
 

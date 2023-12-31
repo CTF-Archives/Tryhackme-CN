@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Introduction to Windows API - Windows API 简介
 
 > [TryHackMe | Introduction to Windows API](https://tryhackme.com/room/windowsapi)
@@ -123,7 +127,7 @@ Win32 库中的每个 API 调用都驻留在内存中，并需要一个指向内
 
 P/Invoke 提供了处理从托管代码调用未管理函数或者说调用 Win32 API 的整个过程的工具。P/Invoke 将从导入包含所需未管理函数或 Win32 API 调用的 DLL 开始。以下是导入 DLL 并提供选项的示例。
 
-```aspnet
+```csharp
 using System;
 using System.Runtime.InteropServices;
 
@@ -138,7 +142,7 @@ public class Program
 
 注意：这里没有包含分号，因为 P/Invoke 函数还没有完成。在第二步中，我们必须将一个托管方法定义为外部方法。`extern` 关键字将告知运行时先前导入的特定 DLL。以下是创建外部方法的示例。
 
-```aspnet
+```csharp
 using System;
 using System.Runtime.InteropServices;
 
@@ -334,7 +338,7 @@ N
 
 为了理解 P/Invoke 是如何实现的，让我们直接通过下面的示例来了解，并在之后讨论各个组成部分。
 
-```aspnet
+```csharp
 class Win32 {
     [DllImport("kernel32")]
     public static extern IntPtr GetComputerNameA(StringBuilder lpBuffer, ref uint lpnSize);
@@ -349,7 +353,7 @@ class Win32 {
 
 现在，我们可以将定义的 API 调用实现到一个应用程序中并使用其功能。以下是一个示例应用程序，使用 API 获取其运行设备的计算机名称和其他信息。
 
-```aspnet
+```csharp
 class Win32 {
     [DllImport("kernel32")]
     public static extern IntPtr GetComputerNameA(StringBuilder lpBuffer, ref uint lpnSize);
@@ -457,7 +461,7 @@ LoadLibrary
 
 要开始分析键盘记录器，我们需要收集它实现了哪些 API 调用和钩子。因为键盘记录器是用 C# 编写的，它必须使用 P/Invoke 来获取每个调用的指针。以下是恶意样本源代码中 P/Invoke 定义的片段。
 
-```aspnet
+```csharp
 [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
 private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
 [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
@@ -481,7 +485,7 @@ private static extern IntPtr GetCurrentProcess();
 
 为了保持案例研究的道德完整性，我们不会涉及样本如何收集每次按键。我们将分析样本是如何在当前进程上设置钩子的。以下是恶意样本源代码中设置钩子部分的片段。
 
-```aspnet
+```csharp
 public static void Main() {
     _hookID = SetHook(_proc);
     Application.Run();
@@ -503,7 +507,7 @@ private static IntPtr SetHook(LowLevelKeyboardProc proc) {
 
 对于 Shellcode 启动器，开始分析它所实现的 API 调用，这个过程应该与之前的案例研究类似。以下是恶意样本源代码中的 P/Invoke 定义片段。
 
-```aspnet
+```csharp
 private static UInt32 MEM_COMMIT = 0x1000;
 private static UInt32 PAGE_EXECUTE_READWRITE = 0x40;
 [DllImport("kernel32")]
@@ -524,7 +528,7 @@ private static extern IntPtr CreateThread(UInt32 lpThreadAttributes, UInt32 dwSt
 
 现在我们将分析 shellcode 是如何被写入并在内存中执行的。
 
-```aspnet
+```csharp
 UInt32 funcAddr = VirtualAlloc(0, (UInt32)shellcode.Length, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
 Marshal.Copy(shellcode, 0, (IntPtr)(funcAddr), shellcode.Length);
 IntPtr hThread = IntPtr.Zero;

@@ -1,4 +1,8 @@
-# Abusing Windows Internals
+---
+sidebar_position: 2
+---
+
+# Abusing Windows Internals - 滥用 Windows 内部机制
 
 > [TryHackMe | Abusing Windows Internals](https://tryhackme.com/room/abusingwindowsinternals)
 >

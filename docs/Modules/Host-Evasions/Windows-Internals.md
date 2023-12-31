@@ -1,3 +1,7 @@
+---
+sidebar_position: 0
+---
+
 # Windows Internals - Windows 内部机制
 
 > [TryHackMe | Windows Internals](https://tryhackme.com/room/windowsinternals)

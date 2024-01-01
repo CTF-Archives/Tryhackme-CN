@@ -91,6 +91,11 @@ const config = {
                         label: 'Networks',
                     },
                     { to: '/blog', label: 'Blog', position: 'left' },
+                    {
+                        href: 'https://github.com/TryHackMyOffsecBox/TryHackMe-CN',
+                        label: 'GitHub',
+                        position: 'right',
+                    },
                 ],
             },
             footer: {
